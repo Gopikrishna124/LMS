@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { LogOutUser } from '@/redux/authSlice'
 import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
-import StudentView from '@/componentpages/StudentComponents/header'
+import StudentHeader from '@/componentpages/StudentComponents/header'
 import StudentIndexPage from '@/componentpages/StudentComponents'
 
 function StudentHomePage() {
@@ -15,7 +15,7 @@ function StudentHomePage() {
 
   return (
     <div>
-        <StudentView/>
+        <StudentHeader/>
          <StudentIndexPage/>
         
     </div>

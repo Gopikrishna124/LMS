@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  title: String,
-  category: String,
-  level: String,
-  primaryLanguage: String,
-  subtitle: String,
-  description: String,
-  pricing: Number,
-  images: String,
-  welcomeMessage: String,
-  objectives: String,
+  title: "",
+  category: "",
+  level:"",
+  primaryLanguage: "",
+  subtitle: "",
+  description: "",
+  pricing:"",
+  images:"",
+  welcomeMessage:"",
+  objectives:"",
 };
 
 const CourseLandingSliceData = createSlice({

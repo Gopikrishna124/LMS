@@ -35,8 +35,8 @@ function InstructorCourses({listOfCourses}) {
              <TableBody>
                  {
                   listOfCourses && listOfCourses.length>0 ? 
-                  listOfCourses.map((course)=>(
-                    <TableRow>
+                  listOfCourses.map((course,index)=>(
+                    <TableRow key={index}>
                     <TableCell>{course?.title}</TableCell>
                    <TableCell>{course?.students?.length}</TableCell>
                    <TableCell>${course?.pricing}</TableCell>

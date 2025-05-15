@@ -18,7 +18,7 @@ const registerController=async(req,res)=>{
         if(!username || !email || !password){
             throw new Error('all fields must be filled')
         }
-        const bcryptedPassword=  bcrypt.hashSync(req.body.password, salt);
+        const bcryptedPassword=bcrypt.hashSync(req.body.password, salt);
         
         user.password=bcryptedPassword
        const result= await user.save()

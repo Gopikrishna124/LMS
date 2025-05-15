@@ -15,7 +15,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-function VideoPlayer({ width = "100%", height = "100%", url }) {
+function VideoPlayer({ width = "100%", height = "100%", url,onProgressUpdate,progressData }) {
+   // here onProgressUpdate and progressData is coming from courseProgress Page 
   const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [mute, setMute] = useState(false);
@@ -59,7 +60,7 @@ function VideoPlayer({ width = "100%", height = "100%", url }) {
   }
 
   function handleSeekMouseUp() {
-    //  setSeeking(false)
+     setSeeking(false)
     playerRef.current?.seekTo(played);
   }
 
@@ -116,7 +117,18 @@ function VideoPlayer({ width = "100%", height = "100%", url }) {
         }
    },[isFullScreen])
   
-
+//if video is completed .i.e played ===1 then updating onProgress Field
+   
+   useEffect(()=>{
+      if(played===1){
+        onProgressUpdate((progressData)=>{
+          return {
+            ...progressData,  //here current lecture is progressData and setCurrentLecture is onProgressUpdate
+             progressValue:played
+          }
+        })
+      }
+   },[played])
   
   return (
     <div

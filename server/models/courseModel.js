@@ -28,7 +28,8 @@ const courseModel=new Schema({
         {
             studentId:String,
             studentName:String,
-            studentEmail:String
+            studentEmail:String,
+            payedAmount:String
         }
     ],
     curriculum:[lectureSchema],

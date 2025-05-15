@@ -18,6 +18,9 @@ const CourseDetailsSlice=createSlice({
         },
         refreshSingleCourse:(state,action)=>{
             state.singleCourse=''
+        },
+        default:()=>{
+            return state
         }
     }
 })

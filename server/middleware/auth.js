@@ -17,7 +17,7 @@ const authenticate = async (req, res, next) => {
     if (!verifiedToken) {
       throw new Error("token expired");
     }
-    req.user = verifiedToken
+    req.user = verifiedToken.id
     next();
   } catch (err) {
     res.json({

@@ -31,7 +31,7 @@ const loginController=async(req,res)=>{
         const tokenData=await jwt.sign(token,process.env.JSON_SECRET,{expiresIn:'5min'})
 
         
-             res.cookie('portalToken',tokenData,{httpsOnly:true,sameSite:'strict'}).json({
+             res.cookie('portalToken',tokenData,{maxAge:1*24*60*60*1000,httpsOnly:true,sameSite:'strict'}).json({
             data:{
                 id:requiredEmail._id,
                 username:requiredEmail.username,

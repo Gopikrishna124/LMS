@@ -13,7 +13,10 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
-  			background: 'hsl(var(--background))',
+			'gradientOne':'linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(23, 43, 40, 1) 45%, rgba(237, 221, 83, 1) 100%)',
+  			'radialOne':'radial-gradient(circle,rgba(42, 123, 155, 1) 0%, rgba(60, 83, 232, 1) 45%, rgba(237, 221, 83, 1) 100%)',
+			 'custom-green':'text-yellow-900',
+			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',

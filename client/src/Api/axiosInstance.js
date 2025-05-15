@@ -17,4 +17,8 @@ import axios from "axios";
 
 export const userEndPoint="http://localhost:5002/api/user"
 export const mediaEndPoint="http://localhost:5002/api/media"
-export const courseEndPoint="http://localhost:5002/api/course"
+export const courseEndPoint="http://localhost:5002/api/course" //instructor courses
+export const studentCourseEndPoint='http://localhost:5002/api/student/course'
+export const paymentCourseEndPoint='http://localhost:5002/api/student/order'
+export const studentBoughtCourseEndPoint='http://localhost:5002/api/student/bought'
+export const studentProgressCourseEndPoint='http://localhost:5002/api/student/progress'

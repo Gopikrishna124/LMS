@@ -18,6 +18,7 @@ import storage from 'redux-persist/lib/storage'
 import courseDetailsReduce from '../redux/Instructor/CourseDetails'
 import CourseCurriculumReducer from '../redux/Instructor/CourseCurriculumSlice'
 import CourseLandingReducer from '../redux/Instructor/CourseLandingSlice'
+import StudentCourseReducer from '../redux/Student/CourseSlice'
 
 const persistConfig = {
   key: 'root',
@@ -30,7 +31,8 @@ const persistConfig = {
   // CourseLanding:CourseLandingReducer,
   CourseLanding:CourseLandingReducer,
   CurriculumReduxFormData:CourseCurriculumReducer,
-  CourseDetails:courseDetailsReduce
+  CourseDetails:courseDetailsReduce,
+  StudentCourse:StudentCourseReducer
  })
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 

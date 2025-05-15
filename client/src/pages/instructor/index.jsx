@@ -17,6 +17,7 @@ function InstructorDashboardPage() {
   const dispatch=useDispatch()
   const navigate=useNavigate()
   const AllCoursesLists=useSelector((state)=>state.CourseDetails.allCourses)
+  console.log('AllCoursesList',AllCoursesLists)
   
   const menuItems=[
     {
@@ -67,9 +68,9 @@ function InstructorDashboardPage() {
             <h2 className='text-2xl font-bold mb-4'>Instructor View</h2>
              <nav>
               {
-                menuItems.map((item)=>(
-                  <>
-                   <Button className='w-full justify-start mb-2'key={item.value}
+                menuItems.map((item,index)=>(
+                  <div key={index}>
+                   <Button  className='w-full justify-start mb-2' key={item.value}
                     variant={activeTab===item.value ?"secondary" :"ghost"} onClick={item.value==='logout' ? handleLogOut : 
                     ()=>setActiveTab(item.value)
                    }>
@@ -77,7 +78,7 @@ function InstructorDashboardPage() {
                    <item.icon className='h-4 w-4 mr-2'/>
                      {item.label} 
                    </Button>
-                  </>
+                  </div>
                    
                    
                 ))
@@ -91,8 +92,8 @@ function InstructorDashboardPage() {
           <h1 className='text-3xl font-bold '>Dashboard</h1>
           <Tabs value={activeTab} defaultValue='dashboard' onValueChange={setActiveTab}>
             {
-              menuItems.map((item)=>(
-                <TabsContent value={item.value}>
+              menuItems.map((item,index)=>(
+                <TabsContent value={item.value} key={index}>
                  {
                   item.component!==null ? item.component :null
                  }
